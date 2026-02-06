@@ -2,12 +2,28 @@
 The project in which this readme is in, is a project about predicting genre-labels of song lyrics using TF-IDF and linear regression models.
 
 The code for the project was ran in uCloud, a cloud computing service. To run the code yourself, you will need to open the notebook file in the src folder called project.ipynb 
-This chunks in the notebook can be run sequentially to run the code for the project, though this is computationally quite expensive. Some chunks that create plots or save models can be skipped, and there will be comments to notify you of this throughout the code.
 
 
+Repository structure:
+src/
+  contains the main jupiter notebook running all code, project.ipynb
+artifacts/
+  contains saved outputs of code run through the notebook, including:
+  validation and test evaluation tables
+  per-genre performance metrics
+  a serialized final model pipeline (includes TF-IDF and LinearSVC saved using joblib)
+plots/
+  contains saved plots from the notebook, including:
+  genre distribution
+  model comparison on validation data
+  model performance on a per-genre basis on test set
+  confusion matrix of final model on test set
 
-To ensure everything runs as intended, it is recommended you create a new virtual environment based on the requirements.txt file within this repository, which includes all packages used for the project. Using an IDE such as VScode, you will automatically be prompted by the IDE when creating a new venv to use for a file.
+To run the code yourself locally:
+  Create a virtual environment using the requirements.txt
+  open src/project.ipynb
+  run through code chunks sequentially
+      Note that this is quite computationally expensive, and some steps such as creating the plots and saving code outputs can be skipped if it is deemed irrelevant. If need be the saved model pipeline, which includes the TF-IDF and LinearSVC can be loaded.
 
-All plots and figures used in the paper can be found in the plots folder, while the artifacts folder contains the saved TF-IDF and final model, the linearSVC
-
-
+For reproducability the dataset split was done using a fixed random seed
+  
